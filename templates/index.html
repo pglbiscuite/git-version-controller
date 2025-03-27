@@ -27,38 +27,72 @@
         <h1 class="darkerText">Git Version Control</h1>
 
         <div class="form-section">
-            <div class="dropdown-group">
-                <label for="project-select">Project/label>
-                <select id="project-select" name="project">
-                    <option value="">Select Project</option>
-                    <!-- Projects will be dynamically populated -->
-                </select>
+            <div class="project-group">
+                <input type="text" id="project-input" class="title-style" placeholder="Enter Project Name">
+                <button type="button" id="reset-button" class="control-button">Reset All</button>
             </div>
 
-            <div class="dropdown-group">
-                <label for="version-select">Version</label>
-                <select id="version-select" name="version">
-                    <option value="">Select Version</option>
-                    <option value="0.0.1">0.0.1</option>
-                    <option value="0.0.2">0.0.2</option>
-                    <option value="0.1.0">0.1.0</option>
-                    <!-- More versions can be added dynamically -->
-                </select>
+            <div class="recent-projects">
+                <!-- Recent projects will be shown here -->
             </div>
 
-            <div class="dropdown-group">
-                <label for="name-select">Name</label>
-                <select id="name-select" name="name">
-                    <option value="">Select Name</option>
-                    <!-- Names will be dynamically populated from Python backend -->
-                </select>
+            <div class="version-control">
+                <div class="version-header">Version</div>
+                <div class="version-inputs">
+                    <div class="version-group">
+                        <div class="version-label">Major</div>
+                        <div class="version-controls">
+                            <button type="button" class="control-button minus" data-version="major">-</button>
+                            <div class="version-number" id="major-version">0</div>
+                            <button type="button" class="control-button plus" data-version="major">+</button>
+                        </div>
+                    </div>
+                    <div class="version-group">
+                        <div class="version-label">Minor</div>
+                        <div class="version-controls">
+                            <button type="button" class="control-button minus" data-version="minor">-</button>
+                            <div class="version-number" id="minor-version">0</div>
+                            <button type="button" class="control-button plus" data-version="minor">+</button>
+                        </div>
+                    </div>
+                    <div class="version-group">
+                        <div class="version-label">Patch</div>
+                        <div class="version-controls">
+                            <button type="button" class="control-button minus" data-version="patch">-</button>
+                            <div class="version-number" id="patch-version">0</div>
+                            <button type="button" class="control-button plus" data-version="patch">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theme-name-section">
+                <div class="theme-group">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" name="theme">
+                        <option value="">Select Theme</option>
+                        <option value="modern">Silicon Valley</option>
+                    </select>
+                </div>
+
+                <div class="name-group">
+                    <label for="name-select">Name</label>
+                    <div class="name-controls">
+                        <select id="name-select" name="name">
+                            <option value="">Select Name</option>
+                        </select>
+                        <button type="button" class="control-button random-name">Random</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="commit-messages">
-            <label for="commit-count">Number of Commit Messages</label>
-            <input type="number" id="commit-count" min="1" max="5" value="1">
-
+            <div class="commit-header">
+                <div class="title-container">Number of Commit Messages</div>
+                <button type="button" class="control-button minus">-</button>
+                <button type="button" class="control-button plus">+</button>
+            </div>
             <div id="commit-message-container">
                 <!-- Commit message inputs will be dynamically generated -->
             </div>
@@ -67,7 +101,20 @@
         <div class="output-section">
             <h3>Generated Git Commit Command</h3>
             <pre id="git-commit-output"></pre>
-            <button id="copy-button">Copy Commit Command</button>
+            <div class="button-group">
+                <button id="copy-button">Copy Commit Command</button>
+                <div class="commit-all-container">
+                    <input type="checkbox" id="commit-all-checkbox">
+                    <button id="commit-all-button" class="commit-all-button">Commit All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <h3>Used Names</h3>
+            <div class="used-names">
+                <!-- Used names will appear here -->
+            </div>
         </div>
     </div>
 
