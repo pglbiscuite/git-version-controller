@@ -6,19 +6,103 @@
     --bg-color: #2f2f2f;
 }
 
-
-
-
 body {
     background: var(--bg-color);
     color: var(--primary-color);
-    /* display: flex; */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
-
 
 /* main text (for now) */
 .darkerText {
     color: var(--secondary-color);
     font-family: 'Jersey 15', sans-serif;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: 2px solid var(--secondary-color);
+    padding: 15px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Form sections with borders */
+.form-section, .commit-messages, .output-section {
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Commit message styling */
+.commit-message-input {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0;
+    background: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-family: 'Pixel7', monospace;
+}
+
+.dropdown-group {
+    margin-bottom: 15px;
+}
+
+.dropdown-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Output styling */
+#git-commit-output {
+    background: #1e1e1e;
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+
+#copy-button {
+    background: var(--secondary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#copy-button:hover {
+    opacity: 0.9;
+}
+
+/* Style for select inputs to match other inputs */
+select, input, label {
+    width: 100%;
+    padding: 8px;
+    background: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-family: 'Pixel7', monospace;
+}
+
+label {
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+    background: none;
 }

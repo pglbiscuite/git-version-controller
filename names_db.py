@@ -3,6 +3,14 @@
 #   Retro // Modern // Classic
 
 
+
+Retro = []
+
+
 Modern = ['Gina', 'Alice', 'Roxie', 'Magda', 'Lorena', 
           'Theo', 'Lisa', 'Madona', 'Lucy', 'Tonia']
+
+
+Classic = []
+
 

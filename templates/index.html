@@ -2,33 +2,76 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>git version control v0.0.2</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Git Version Control v0.1.0</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/static/css/styles.css" />
 
-
+    <style>
+        @font-face {
+            font-family: 'Pixel7';
+            src: url('https://cdn.jsdelivr.net/npm/pixel7-font/pixel7.ttf') format('truetype');
+        }
+    </style>
 </head>
 
-
-
 <body>
-    <p class="darkerText"> Server Up & Running</p>
+    <div class="container">
+        <h1 class="darkerText">Git Version Control</h1>
 
+        <div class="form-section">
+            <div class="dropdown-group">
+                <label for="project-select">Project/label>
+                <select id="project-select" name="project">
+                    <option value="">Select Project</option>
+                    <!-- Projects will be dynamically populated -->
+                </select>
+            </div>
 
+            <div class="dropdown-group">
+                <label for="version-select">Version</label>
+                <select id="version-select" name="version">
+                    <option value="">Select Version</option>
+                    <option value="0.0.1">0.0.1</option>
+                    <option value="0.0.2">0.0.2</option>
+                    <option value="0.1.0">0.1.0</option>
+                    <!-- More versions can be added dynamically -->
+                </select>
+            </div>
 
+            <div class="dropdown-group">
+                <label for="name-select">Name</label>
+                <select id="name-select" name="name">
+                    <option value="">Select Name</option>
+                    <!-- Names will be dynamically populated from Python backend -->
+                </select>
+            </div>
+        </div>
 
+        <div class="commit-messages">
+            <label for="commit-count">Number of Commit Messages</label>
+            <input type="number" id="commit-count" min="1" max="5" value="1">
 
+            <div id="commit-message-container">
+                <!-- Commit message inputs will be dynamically generated -->
+            </div>
+        </div>
 
+        <div class="output-section">
+            <h3>Generated Git Commit Command</h3>
+            <pre id="git-commit-output"></pre>
+            <button id="copy-button">Copy Commit Command</button>
+        </div>
+    </div>
 
-
+    <script src="/static/js/script.js"></script>
 </body>
 
 </html>
